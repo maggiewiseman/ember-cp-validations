@@ -96,13 +96,13 @@ const Base = EmberObject.extend({
     let owner = getOwner(this);
     let errorMessages;
 
-    if (!isNone(owner)) {
-      // Since default error messages are stored in app/validators/messages, we have to look it up via the owner
-      errorMessages = owner.factoryFor('validator:messages');
-    }
+    // if (!isNone(owner)) {
+    //   // Since default error messages are stored in app/validators/messages, we have to look it up via the owner
+    //   errorMessages = owner.factoryFor('validator:messages');
+    // }
 
     // If for some reason, we can't find the messages object (i.e. unit tests), use default
-    errorMessages = errorMessages || Messages;
+    errorMessages = Messages;
 
     set(
       this,
